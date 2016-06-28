@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Citizens
+namespace Citizens.Implementations
 {
     public enum Gender
     {

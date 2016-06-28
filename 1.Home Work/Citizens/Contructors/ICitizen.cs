@@ -1,6 +1,7 @@
 ﻿using System;
+using Citizens.Implementations;
 
-namespace Citizens
+namespace Citizens.Contructors
 {
     public interface ICitizen
     {

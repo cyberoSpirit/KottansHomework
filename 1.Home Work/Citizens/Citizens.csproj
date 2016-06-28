@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gender.cs" />
-    <Compile Include="ICitizen.cs" />
-    <Compile Include="ICitizenRegistry.cs" />
+    <Compile Include="Implementations\Citizen.cs" />
+    <Compile Include="Implementations\CitizenRegistry.cs" />
+    <Compile Include="Implementations\Gender.cs" />
+    <Compile Include="Helpers\StringConverter.cs" />
+    <Compile Include="Contructors\ICitizen.cs" />
+    <Compile Include="Contructors\ICitizenRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SystemDateTime.cs" />
+    <Compile Include="Helpers\SystemDateTime.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

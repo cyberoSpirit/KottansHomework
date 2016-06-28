@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Citizens
+namespace Citizens.Contructors
 {
     public interface ICitizenRegistry
     {
