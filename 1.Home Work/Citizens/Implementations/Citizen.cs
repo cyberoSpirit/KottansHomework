@@ -69,6 +69,14 @@ namespace Citizens.Implementations
 
         public string VatId { get; set; }
 
+        public DateTime RegistrationDate { get; set; }
 
+        public object Clone()
+        {
+            var copy =  new Citizen(firstName, lastName, dateOfBirth, gender);
+            copy.VatId = VatId;
+            copy.RegistrationDate = RegistrationDate;
+            return copy;
+        }
     }
 }
