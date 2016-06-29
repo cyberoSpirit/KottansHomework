@@ -3,6 +3,7 @@ using Citizens.Contructors;
 using System.Collections.Generic;
 using Citizens.Implementations;
 using System.Linq;
+using Humanizer;
 
 namespace Citizens.Implementation
 {
@@ -62,7 +63,7 @@ namespace Citizens.Implementation
 
             if (!register.ContainsKey(citizen.VatId))
             {
-                citizen.RegistrationDate = new DateTime(2016, 5, 15);
+                citizen.RegistrationDate = SystemDateTime.Now();
                 register.Add(citizen.VatId, citizen.Clone() as ICitizen);
             }
             else
@@ -99,23 +100,12 @@ namespace Citizens.Implementation
             int femaleCount = genderList.Where(v => v == 0).Count();
             string manNoun = maleCount == 1 ? "man" : "men";
             string womanNoun = femaleCount == 1 ? "woman" : "women";
-            DateTime currentDate = new DateTime(2016, 5, 16);
-            var registrationIntervals = register.Select(v => (currentDate.Date - v.Value.RegistrationDate.Date).Days);
-            int maxRegistrationDay = registrationIntervals.Any() ? registrationIntervals.Max() : -1;
-            string message = GetRegistrationTimeMessage(maxRegistrationDay);
-            message = message.Length > 0 ? ". " + message : string.Empty;
+            var registrationDays = register.Select(v => v.Value.RegistrationDate.Date - SystemDateTime.Now());
+
+            var message = registrationDays.Any() ? DateTime.UtcNow.AddDays(registrationDays.Max().Days).Humanize() : "";
+
+            message = message.Length > 0 ? ". Last registration was " + message : string.Empty;
             return string.Format("{0} {1} and {2} {3}{4}", maleCount, manNoun, femaleCount, womanNoun, message);
         }
-
-        private string GetRegistrationTimeMessage(int days)
-        {
-            if (days == -1) { return string.Empty; }
-            if (days == 0) { return "Last registration was today"; }
-            if (days == 1) { return "Last registration was yesterday"; }
-            if (days > 1 && days < 8) { return "Last registration was few days ago"; }
-            return "Last registration was more than week ago";
-
-        }
-
     }
 }

@@ -165,6 +165,26 @@
             Assert.AreEqual("1 man and 0 women. Last registration was yesterday", msg);
         }
 
+        [TestMethod]
+        public void Stats_WithOneManAndOneWomanInRegistry_ReturnsMessageOneManAndOneWomenWithLastRegistrationTimeInfo()
+        {
+            var bd = TestTodayDate.AddYears(-1);
+            var citizen = CitizenBuilder.NewMan().WithDate(bd).Build();
+
+            var twoDaysAgo = TestTodayDate.AddDays(-2);
+            SystemDateTime.Now = () => twoDaysAgo;
+            registry.Register(citizen);
+
+            citizen = CitizenBuilder.NewWoman().WithDate(bd).Build();
+
+            SystemDateTime.Now = () => twoDaysAgo;
+            registry.Register(citizen);
+            SystemDateTime.Now = () => TestTodayDate;
+
+            var msg = registry.Stats();
+            Assert.AreEqual("1 man and 1 woman. Last registration was 2 days ago", msg);
+        }
+
         private ICitizenRegistry CreateCitizenRegistry()
         {
             return new CitizenRegistry();
