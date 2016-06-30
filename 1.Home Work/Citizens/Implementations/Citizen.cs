@@ -1,16 +1,47 @@
-﻿using System;
-using Citizens.Contructors;
-using Citizens.Helpers;
+﻿//-----------------------------------------------------------------------
+// <copyright file="ICitizen.cs" company="NuvoLetta">
+//     Copyright © 2001-2016, NuvoLetta, Inc. All Rights Reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace Citizens.Implementations
 {
+    using System;
+    using Citizens.Contructors;
+    using Citizens.Helpers;
+
+    /// <summary>
+    /// Citizen logical model.
+    /// </summary>
     public class Citizen : ICitizen
     {
+        /// <summary>
+        /// Container for birthday date.
+        /// </summary>
         private DateTime dateOfBirth;
+
+        /// <summary>
+        /// Container for firste name of person.
+        /// </summary>
         private string firstName;
+
+        /// <summary>
+        /// Container for last name of person.
+        /// </summary>
         private Gender gender;
+
+        /// <summary>
+        /// Container for Firste name of person.
+        /// </summary>
         private string lastName;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Citizen" /> class.
+        /// </summary>
+        /// <param name="firstName">Firste name of person.</param>
+        /// <param name="lastName">Last name of person.</param>
+        /// <param name="dateOfBirth">Person's birthday date.</param>
+        /// <param name="gender">Person's gender.</param>
         public Citizen(string firstName, string lastName, DateTime dateOfBirth, Gender gender)
         {
             this.firstName = firstName.ToTitleCase();
@@ -35,6 +66,7 @@ namespace Citizens.Implementations
             }
         }
 
+        /// <inheritdoc />
         public DateTime BirthDate
         {
             get
@@ -43,6 +75,7 @@ namespace Citizens.Implementations
             }
         }
 
+        /// <inheritdoc />
         public string FirstName
         {
             get
@@ -51,6 +84,7 @@ namespace Citizens.Implementations
             }
         }
 
+        /// <inheritdoc />
         public Gender Gender
         {
             get
@@ -59,6 +93,7 @@ namespace Citizens.Implementations
             }
         }
 
+        /// <inheritdoc />
         public string LastName
         {
             get
@@ -67,10 +102,13 @@ namespace Citizens.Implementations
             }
         }
 
+        /// <inheritdoc />
         public string VatId { get; set; }
 
+        /// <inheritdoc />
         public DateTime RegistrationDate { get; set; }
 
+        /// <inheritdoc />
         public object Clone()
         {
             var copy =  new Citizen(firstName, lastName, dateOfBirth, gender);

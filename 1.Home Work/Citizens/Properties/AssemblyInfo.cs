@@ -1,5 +1,10 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿//-----------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="NuvoLetta">
+//     Copyright © 2001-2016, NuvoLetta, Inc. All Rights Reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 

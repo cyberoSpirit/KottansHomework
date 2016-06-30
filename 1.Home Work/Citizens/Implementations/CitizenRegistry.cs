@@ -1,12 +1,21 @@
-﻿using System;
-using Citizens.Contructors;
-using System.Collections.Generic;
-using Citizens.Implementations;
-using System.Linq;
-using Humanizer;
+﻿//-----------------------------------------------------------------------
+// <copyright file="CitizenRegistry.cs" company="NuvoLetta">
+//     Copyright © 2001-2016, NuvoLetta, Inc. All Rights Reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace Citizens.Implementation
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Contructors;
+    using Implementations;
+    using Humanizer;
+
+    /// <summary>
+    /// Citizenz registrator.
+    /// </summary>
     public class CitizenRegistry : ICitizenRegistry
     {
         private Dictionary<string, ICitizen> register;
