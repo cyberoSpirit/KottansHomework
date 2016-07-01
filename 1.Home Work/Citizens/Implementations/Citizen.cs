@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ICitizen.cs" company="NuvoLetta">
+// <copyright file="Citizen.cs" company="NuvoLetta">
 //     Copyright © 2001-2016, NuvoLetta, Inc. All Rights Reserved.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -21,7 +21,7 @@ namespace Citizens.Implementations
         private DateTime dateOfBirth;
 
         /// <summary>
-        /// Container for firste name of person.
+        /// Container for first name of person.
         /// </summary>
         private string firstName;
 
@@ -31,14 +31,14 @@ namespace Citizens.Implementations
         private Gender gender;
 
         /// <summary>
-        /// Container for Firste name of person.
+        /// Container for first name of person.
         /// </summary>
         private string lastName;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Citizen" /> class.
         /// </summary>
-        /// <param name="firstName">Firste name of person.</param>
+        /// <param name="firstName">First name of person.</param>
         /// <param name="lastName">Last name of person.</param>
         /// <param name="dateOfBirth">Person's birthday date.</param>
         /// <param name="gender">Person's gender.</param>
@@ -111,7 +111,7 @@ namespace Citizens.Implementations
         /// <inheritdoc />
         public object Clone()
         {
-            var copy =  new Citizen(firstName, lastName, dateOfBirth, gender);
+            var copy = new Citizen(firstName, lastName, dateOfBirth, gender);
             copy.VatId = VatId;
             copy.RegistrationDate = RegistrationDate;
             return copy;
