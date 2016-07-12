@@ -7,7 +7,7 @@
 namespace Citizens.Implementations
 {
     using System;
-    using Citizens.Contructors;
+    using Citizens.Interfaces;
     using Citizens.Helpers;
 
     /// <summary>

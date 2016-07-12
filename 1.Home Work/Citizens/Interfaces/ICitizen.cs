@@ -4,7 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace Citizens.Contructors
+namespace Citizens.Interfaces
 {
     using System;
     using Citizens.Implementations;

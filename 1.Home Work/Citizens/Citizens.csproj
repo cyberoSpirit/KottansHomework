@@ -48,8 +48,8 @@
     <Compile Include="Implementations\CitizenRegistry.cs" />
     <Compile Include="Implementations\Gender.cs" />
     <Compile Include="Helpers\StringConverter.cs" />
-    <Compile Include="Contructors\ICitizen.cs" />
-    <Compile Include="Contructors\ICitizenRegistry.cs" />
+    <Compile Include="Interfaces\ICitizen.cs" />
+    <Compile Include="Interfaces\ICitizenRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\SystemDateTime.cs" />
   </ItemGroup>

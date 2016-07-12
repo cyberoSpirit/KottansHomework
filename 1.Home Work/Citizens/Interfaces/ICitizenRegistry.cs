@@ -4,7 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace Citizens.Contructors
+namespace Citizens.Interfaces
 {
     /// <summary>
     /// Designate Registry for citizen entity.

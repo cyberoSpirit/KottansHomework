@@ -1,5 +1,5 @@
 ﻿using System;
-using Citizens.Contructors;
+using Citizens.Interfaces;
 using Citizens.Implementations;
 
 namespace Citizens.Tests.Helpers

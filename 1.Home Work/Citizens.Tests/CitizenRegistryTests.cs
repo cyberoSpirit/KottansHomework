@@ -5,7 +5,7 @@
     using Citizens;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Contructors;
+    using Interfaces;
     using Implementation;
 
     [TestClass]

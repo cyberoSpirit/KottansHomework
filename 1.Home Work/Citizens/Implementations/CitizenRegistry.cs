@@ -9,7 +9,7 @@ namespace Citizens.Implementation
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Contructors;
+    using Interfaces;
     using Humanizer;
     using Implementations;
 
@@ -84,8 +84,8 @@ namespace Citizens.Implementation
         public string Stats()
         {
             var genderList = register.Select(v => int.Parse(v.Key[8].ToString()) % 2).ToList();
-            int maleCount = genderList.Where(v => v == 1).Count();
-            int femaleCount = genderList.Where(v => v == 0).Count();
+            int maleCount = genderList.Count(v => v == 1);
+            int femaleCount = genderList.Count - maleCount;
             string manNoun = maleCount == 1 ? "man" : "men";
             string womanNoun = femaleCount == 1 ? "woman" : "women";
             var registrationDays = register.Select(v => v.Value.RegistrationDate.Date - SystemDateTime.Now());
@@ -104,7 +104,8 @@ namespace Citizens.Implementation
         /// <returns>True if person has passed gender and false in other case.</returns>
         private bool GenderCondition(string sequenceNumber, Gender gender)
         {
-            return int.Parse(sequenceNumber[2].ToString()) % 2 == (int)gender;
+            int genderValue = gender == Gender.Male ? 1 : 0;
+            return int.Parse(sequenceNumber[2].ToString()) % 2 == genderValue;
         }
 
         /// <summary>
